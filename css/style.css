@@ -6,7 +6,7 @@ body {
 }
 
 nav {
-    box-shadow: .5rem 0 2rem .2rem black;
+    box-shadow: 0 0 2rem .3rem black;
 }
 
 nav a {
@@ -65,9 +65,20 @@ h1 {
     padding-top: 1.5rem
 }
 
+.content p {
+    font-size: 1.5rem;
+}
+
 footer {
     height: 400px;
     background: #151515;
+}
+
+
+
+#days-remaining {
+    font-size: 1.5rem;
+    padding: 2rem 1rem;
 }
 
 @media only screen and (min-width: 991px){
@@ -94,6 +105,15 @@ footer {
 
     .content {
         width: 65%;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    #days-remaining {
+        font-size: 1rem;
+        padding: 1rem 1rem;
     }
 }
 
