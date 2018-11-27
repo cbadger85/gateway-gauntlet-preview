@@ -1,8 +1,29 @@
-* {
-    background: #035d80;
-    color: #c8f7c5;
+@import url('https://fonts.googleapis.com/css?family=Orbitron:bold');
+
+body {
+    background: black;
 }
 
-div {
-    text-align: center;
+h1 {
+    font-family: 'Orbitron';
+    font-weight: bold;
+    text-shadow: 0 .2rem 2rem black;
+    
+}
+
+.jumbotron p {
+    text-shadow: .2rem .2rem 1rem black, -.2rem -.2rem 1rem black;
+}
+
+.logo-sm {
+    height: 5rem;
+    filter: drop-shadow(0 0 1rem black);
+}
+
+.jumbotron-fluid {
+    margin-top: 0;
+    padding-top: 5rem;
+    background: radial-gradient(rgba(0,0,0,.3), rgba(0, 0, 0, 1)),
+        linear-gradient(rgba(0,0,0,0) 60%, rgba(0,0,0,.7)),
+        no-repeat center/cover url("../images/Q2bpBSFCc9U.jpg");
 }
