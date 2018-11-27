@@ -11,8 +11,9 @@ h1 {
     
 }
 
-.jumbotron p {
+.jumbotron-fluid p {
     text-shadow: .2rem .2rem 1rem black, -.2rem -.2rem 1rem black;
+    font-size: 3rem;
 }
 
 .logo-sm {
@@ -26,4 +27,10 @@ h1 {
     background: radial-gradient(rgba(0,0,0,.3), rgba(0, 0, 0, 1)),
         linear-gradient(rgba(0,0,0,0) 60%, rgba(0,0,0,.7)),
         no-repeat center/cover url("../images/Q2bpBSFCc9U.jpg");
+}
+
+@media only screen and (min-width: 991px){
+    .jumbotron-fluid p {
+        font-size: 1rem;
+    }
 }
