@@ -2,22 +2,39 @@
 
 body {
     background: black;
+    position: relative;
+}
+
+nav {
+    box-shadow: .5rem 0 2rem .2rem black;
+}
+
+nav a {
+    font-size: 1.5rem;
+}
+
+.btn {
+    font-size: 1.5rem;
 }
 
 h1 {
     font-family: 'Orbitron';
     font-weight: bold;
     text-shadow: 0 .2rem 2rem black;
-    
 }
 
 .jumbotron-fluid p {
     text-shadow: .2rem .2rem 1rem black, -.2rem -.2rem 1rem black;
-    font-size: 3rem;
+    font-size: 1.5rem;
 }
 
 .logo-sm {
     height: 5rem;
+    filter: drop-shadow(0 0 1rem black);
+}
+
+.logo-md {
+    height: 15rem;
     filter: drop-shadow(0 0 1rem black);
 }
 
@@ -29,8 +46,54 @@ h1 {
         no-repeat center/cover url("../images/Q2bpBSFCc9U.jpg");
 }
 
+.container-fluid .content-container {
+    height: 500px;
+}
+
+.container-fluid .content-container:nth-child(odd) {
+    background: #eee;
+    color: #333;
+}
+
+.container-fluid .content-container:nth-child(even) {
+    background: #222;
+    color: #eee;
+}
+
+.content {
+    width: 90%;
+    padding-top: 1.5rem
+}
+
+footer {
+    height: 400px;
+    background: #151515;
+}
+
 @media only screen and (min-width: 991px){
     .jumbotron-fluid p {
         font-size: 1rem;
     }
+
+    nav ul li {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    nav ul li:first-child {
+        margin-left: 0;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+    }
+
+    .content {
+        width: 65%;
+    }
 }
+
