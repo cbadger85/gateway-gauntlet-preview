@@ -1,0 +1,28 @@
+{
+  "name": "gateway-gauntlet",
+  "version": "1.0.0",
+  "description": "Event page for the 2019 Gateway Gauntlet",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbadger85/gateway-gauntlet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbadger85/gateway-gauntlet/issues"
+  },
+  "homepage": "https://github.com/cbadger85/gateway-gauntlet#readme",
+  "dependencies": {
+    "auto-prefixer": "^0.4.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.3",
+    "cssnano": "^4.1.8",
+    "webpack": "^4.28.2"
+  }
+}

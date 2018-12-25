@@ -31,12 +31,14 @@ h1 {
 
 .logo-sm {
     height: 5rem;
-    filter: drop-shadow(0 0 1rem black);
+    -webkit-filter: drop-shadow(0 0 1rem black);
+            filter: drop-shadow(0 0 1rem black);
 }
 
 .logo-md {
     height: 15rem;
-    filter: drop-shadow(0 0 1rem black);
+    -webkit-filter: drop-shadow(0 0 1rem black);
+            filter: drop-shadow(0 0 1rem black);
 }
 
 .jumbotron-fluid {
@@ -44,7 +46,7 @@ h1 {
     padding-top: 5rem;
     background: radial-gradient(rgba(0,0,0,.3), rgba(0, 0, 0, 1)),
         linear-gradient(rgba(0,0,0,0) 60%, rgba(0,0,0,.7)),
-        no-repeat center/cover url("../images/Q2bpBSFCc9U.jpg");
+        no-repeat center/cover url("Q2bpBSFCc9U.75c4f143.jpg");
 }
 
 .content-container {
