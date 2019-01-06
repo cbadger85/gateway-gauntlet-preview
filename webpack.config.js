@@ -1,7 +1,7 @@
 // webpack v4
 const path = require('path');
-// update from 23.12.2018
-const nodeExternals = require('webpack-node-externals');
+
+// const nodeExternals = require('webpack-node-externals');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -10,13 +10,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/js/app.js' },
+  entry: { main: './src/js/index.js' },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'js/[name].[chunkhash].js',
   },
-  target: 'node', // update from 23.12.2018
-  externals: [nodeExternals()], // update from 23.12.2018
+  // target: 'node',
+  // externals: [nodeExternals()],
   module: {
     rules: [
       {
