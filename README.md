@@ -1,14 +1,14 @@
-##Gateway Gauntlet
+# Gateway Gauntlet
 A preview of the Gateway Gauntlet website
 
 [Live Demo](https://gateway-gauntlet-preview.netlify.com/)
 
 ## TODO:
--Finish Who section
--Add footer to website
--Add bibliography to footer
--Create registration form
--Add server-side API for accepting payment and adding registrants to the database
+* Finish Who section
+* Add footer to website
+* Add bibliography to footer
+* Create registration form
+* Add server-side API for accepting payment and adding registrants to the database
 
 ### Biblography
 
