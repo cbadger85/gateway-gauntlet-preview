@@ -9,7 +9,7 @@
 </head>
 <body>
   <nav class="navbar" id="navbar">
-    <button id="menu-button" class="menu-button" aria-expanded="false">
+    <button id="menu-button" class="menu-button" aria-expanded="false" type="button">
       <span class="menu-button__text">
         Menu
       </span>
@@ -22,27 +22,112 @@
       </svg>
     </button>
     <ul class="nav__list" id="menu">
-      <li class="nav__list-item"><a href="#" class="nav__nav-item">Home</a></li>
-      <li class="nav__list-item"><a href="#" class="nav__nav-item">Where</a></li>
-      <li class="nav__list-item"><a href="#" class="nav__nav-item">Gauntlet Challenge</a></li>
-      <li class="nav__list-item"><a href="#" class="nav__nav-item">Who</a></li>
-      <li class="nav__list-item"><a href="#" class="nav__nav-item">Sign Up</a></li>
+      <li class="nav__list-item"><a href="#top" data-smooth-scroll-target="top" class="nav__nav-item smooth-scroll">Home</a></li>
+      <li class="nav__list-item"><a href="#about" data-smooth-scroll-target="about" class="nav__nav-item smooth-scroll">About</a></li>
+      <li class="nav__list-item"><a href="#missions" data-smooth-scroll-target="missions" class="nav__nav-item smooth-scroll">Missions</a></li>
+      <li class="nav__list-item"><a href="#location"  data-smooth-scroll-target="location"class="nav__nav-item smooth-scroll">Location</a></li>
+      <li class="nav__list-item"><a href="#" data-smooth-scroll-target="gauntlet-challenge" class="nav__nav-item smooth-scroll">Gauntlet Challenge</a></li>
+      <li class="nav__list-item"><a href="#" data-smooth-scroll-target="who" class="nav__nav-item smooth-scroll">Who</a></li>
+      <li class="nav__list-item" id="last-item"><a href="#" class="nav__button--call-to-action">Sign Up</a></li>
     </ul>
   </nav>
-  <main class="main">
-    <header class="header">
-      <p>June 29-30</p>
-      <h1 class="header__heading">Gateway Gauntlet</h1>
-      <p>An Infinity Dire States event held in Saint Louis</p>
-      <img class="header__logo" inline src="/images/grayscale-gauntlet.svg">
-
+  <header class="header" id="top">
+    <div class="header__container">
+      <div class="header__container-text">
+        <p>June 29-30</p>
+        <h1 class="header__heading">Gateway Gauntlet</h1>
+        <p>An Infinity Dire States event held in Saint Louis</p>
+      </div>
+      <img class="header__logo" inline src="images/grayscale-gauntlet.svg">
+      <a href="#" class="header__button--call-to-action">Sign Up</a>
+    </div>
     </header>
+  <div class="container">
+    <div class="white-content__container" id="about">
+      <main class="main-content__container">
+        <div class="content__container-text--main">
+          <h2 class="content__heading">The Gateway Gauntlet</h2>
+          <hr class="content__hr">
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit fugit, obcaecati labore voluptatem nostrum maiores quod ut blanditiis explicabo at quia? Culpa animi mollitia repellat repellendus laboriosam ducimus tenetur voluptatum!
+          </p>
+        </div>
+        <div class="card--price">
+          <span>$35</span>
+          <hr>
+          <ul>
+            <li>Admission</li>
+            <li>Event Patch</li>
+            <li>Swag Bag</li>
+            <li>Lunch on the first day</li>
+          </ul>
+          <a href="#" class="card__button--call-to-action">Buy Now</a>
+        </div>
+      </main>
+    </div>
+    <!-- Add count down and spots remaining here -->
+    <div class="black-content__container" id="missions">
+      <section class="content__container--missions">
+        <h2 class="content__heading">Missions</h2>
+        <hr class="content__hr--green">
+        <div class="content__missions">
+          <ul>
+            <li class="content__mission">
+              <img inline src="images/noun_battery.svg" alt="battery" class="content__mission-image">
+              <p>Power Pack</p>
+            </li>
+            <li class="content__mission">
+              <img inline src="images/noun_backpack.svg" alt="backpack" class="content__mission-image">
+              <p>Frontline</p>
+            </li>
+            <li class="content__mission">
+              <img inline src="images/noun_gun.svg" alt="gun" class="content__mission-image">
+              <p>Annihilation</p>
+            </li>
+            <li class="content__mission">
+              <img inline src="images/noun_cogs.svg" alt="cogs" class="content__mission-image">
+              <p>Engineering Deck</p>
+            </li>
+            <li class="content__mission">
+              <img inline src="images/noun_armor.svg" alt="battery" class="content__mission-image">
+              <p>Armory</p>
+            </li>            
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="white-content__container" id="location">
+      <section class="content__container--where">
+          <h2 class="content__heading">Location</h2>
+          <hr class="content__hr">
+          <div class="content__container-text--where">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque natus sunt quibusdam facere ut sit repellendus aliquam quos ipsum laboriosam quam a rem aperiam, sed officia quod laborum animi?</p>
+            <div class="card--map">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12478.543779662028!2d-90.3518159!3d38.5652008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5688a3c33443cada!2sGame+Nite!5e0!3m2!1sen!2sus!4v1549166523239" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="black-content__container" id="gauntlet-challenge">
+        <section class="content__container--challenge">
+          <h2 class="content__heading">Gauntlet Challenge</h2>
+          <hr class="content__hr--green">
+          <div class="content__container-text--challenge">
+            <img src="images/GatewayGauntlet_ChallengePatch.svg" alt="gauntlet challenge patch" class="challenge-patch">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur culpa sit tempore quae! A, molestias, ex iure totam est fuga esse natus excepturi officia consequuntur provident eaque! Eligendi, id incidunt.</p>
+          </div>
+      </section>
+    </div>
+    <div class="gray-content__container" id="who">
+      <section class="content__container--who">
+        <h2 class="content__heading">Who Are We</h2>
+        <hr class="content__hr--orange">
 
-    <!-- <img src="images/GbvAoVj4eo8.jpg" alt="">
+      </section>
+    </div>
+  </div>
 
-    <img inline src="images/grayscale-gauntlet.svg"> -->
 
-  </main>
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>

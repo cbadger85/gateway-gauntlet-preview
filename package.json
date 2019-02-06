@@ -8,7 +8,7 @@
     "dev": "concurrently \"npm:watch\" \"npm:webpack-dev\" --kill-others --names \"EXPRESS,WEBPACK\" -c \"bgBlue.bold,bgGreen.red.italic\"",
     "build": "webpack --mode production",
     "watch": "nodemon ./server/app --ignore public/",
-    "webpack-dev": "webpack-dev-server --mode development --open"
+    "webpack-dev": "webpack-dev-server --mode development --open --disable-host-check"
   },
   "repository": {
     "type": "git",

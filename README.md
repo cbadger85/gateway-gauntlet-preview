@@ -1,8 +1,22 @@
-## Build Process
-to run the development server `npm start` and go to [http://localhost:8080](http://localhost:8080)
+#Gateway Gauntlet
+A preview of the Gateway Gauntlet website
 
-to build for production run `npm run build`
+[Live Demo](https://gateway-gauntlet-preview.netlify.com/)
 
-##
-TODO:
-* Setup environmental variables
+## TODO:
+*Add footer to website
+*Add bibliography to footer
+*Create registration form
+*Add server-side API for accepting payment and adding registrants to the database
+
+### Biblography
+
+noun_armor.svg - armor by Igor Esaulov from the Noun Project
+
+noun_battery.svg - Battery by Travis Avery from the Noun Project
+
+noun_gun.svg - Gun by nauraicon from the Noun Project
+
+noun_cogs.svg - cogs by John T. Garcia from the Noun Project
+
+noun_backpack.svg Backpack by Eucalyp from the Noun Project
