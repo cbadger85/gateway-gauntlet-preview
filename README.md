@@ -4,6 +4,7 @@ A preview of the Gateway Gauntlet website
 [Live Demo](https://gateway-gauntlet-preview.netlify.com/)
 
 ## TODO:
+*Finish Who section
 *Add footer to website
 *Add bibliography to footer
 *Create registration form
