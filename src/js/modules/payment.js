@@ -1,16 +1,34 @@
+import axios from 'axios';
+
 const payment = (element, form) => {
   const stripe = Stripe(process.env.STRIPE_PUB_KEY);
   const elements = stripe.elements();
 
-  const submitToken = (token) => {
-    const hiddenInput = document.createElement('input');
-    hiddenInput.setAttribute('type', 'hidden');
-    hiddenInput.setAttribute('name', 'stripeToken');
-    hiddenInput.setAttribute('value', token.id);
-    form.appendChild(hiddenInput);
+  const submitToken = async (token, formData) => {
+    // const hiddenInput = document.createElement('input');
+    // hiddenInput.setAttribute('type', 'hidden');
+    // hiddenInput.setAttribute('name', 'stripeToken');
+    // hiddenInput.setAttribute('value', token.id);
+    // form.appendChild(hiddenInput);
 
-    console.log('form submitted!');
     // TODO: submit form to serverless function
+
+    const registrationData = {
+      name: formData.name.value,
+      itsName: formData.itsName.value,
+      itsPin: formData.itsPin.value,
+      email: formData.email.value,
+      city: formData.email.value,
+      state: formData.email.value,
+      zip: formData.zip.value,
+      stripeToken: token.id,
+    };
+
+    console.log(registrationData);
+
+    const res = await axios.post('/register', registrationData);
+
+    console.log(res.data);
     // form.submit();
 
     // TODO: toggle modal with either success and redirect or error message.
@@ -49,7 +67,7 @@ const payment = (element, form) => {
     if (error) {
       // TODO: trigger modal with error
     } else {
-      submitToken(token);
+      submitToken(token, e.target.elements);
     }
   });
 };

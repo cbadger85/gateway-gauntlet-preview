@@ -4,10 +4,10 @@
   "description": "Event page for the 2019 Gateway Gauntlet",
   "main": "index.html",
   "scripts": {
-    "start": "npm run build && node ./server/app",
+    "start": "npm run build && node ./server/start",
     "dev": "concurrently \"npm:watch\" \"npm:webpack-dev\" --kill-others --names \"EXPRESS,WEBPACK\" -c \"bgBlue.bold,bgGreen.red.italic\"",
     "build": "webpack --mode production",
-    "watch": "nodemon ./server/app --ignore public/",
+    "watch": "nodemon ./server/start --ignore public/",
     "webpack-dev": "webpack-dev-server --mode development --open --disable-host-check"
   },
   "repository": {
@@ -22,6 +22,8 @@
   "homepage": "https://github.com/cbadger85/gateway-gauntlet#readme",
   "dependencies": {
     "@babel/runtime": "^7.3.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4"
   },

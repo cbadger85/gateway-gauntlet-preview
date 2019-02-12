@@ -1,21 +1,21 @@
 const express = require('express');
 const path = require('path');
-require('dotenv').config();
+const bodyParser = require('body-parser');
 
-const routes = require('./routes/index');
+const errorHandlers = require('./handlers/errorHandlers');
+const routes = require('./routes');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-// Middleware
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
+app.use('/', routes);
 
-// app.use('/', routes);
+app.use(errorHandlers.notFound);
+app.use(errorHandlers.validationErrors);
+app.use(errorHandlers.developmentErrors);
 
-app.get('/api', (req, res) => res.send('API stuff...'));
-
-app.set('port', process.env.PORT);
-const server = app.listen(app.get('port'), () => {
-  console.log(`Express running → PORT ${server.address().port}`);
-});
+module.exports = app;
