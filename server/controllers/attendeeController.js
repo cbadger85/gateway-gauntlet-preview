@@ -12,8 +12,6 @@ exports.register = async (req, res, next) => {
     receipt_email: req.body.email,
   };
 
-  console.log(process.env.STRIPE_SECRET_KEY);
-
   const charge = await stripe.charges.create(createCharge);
   console.log(charge);
 
