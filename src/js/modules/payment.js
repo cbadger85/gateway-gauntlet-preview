@@ -18,8 +18,8 @@ const payment = (element, form) => {
       itsName: formData.itsName.value,
       itsPin: formData.itsPin.value,
       email: formData.email.value,
-      city: formData.email.value,
-      state: formData.email.value,
+      city: formData.city.value,
+      state: formData.state.value,
       zip: formData.zip.value,
       stripeToken: token.id,
     };
