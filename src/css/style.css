@@ -440,6 +440,11 @@ box-shadow: 2px 10px 30px #111;
   margin: 50px auto;
 }
 
+.header__container-text--register a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header--register h1 {
   margin: 15px;
 }
