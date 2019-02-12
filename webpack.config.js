@@ -79,7 +79,9 @@ module.exports = {
       template: './src/register.html',
       filename: 'register.html',
     }),
-    new Dotenv(),
+    new Dotenv({
+      systemvars: true,
+    }),
     new CopyWebpackPlugin([
       { from: 'src/images', to: 'images' },
     ]),
