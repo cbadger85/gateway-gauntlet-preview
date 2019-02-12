@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const serverless = require('serverless-http');
 
 const errorHandlers = require('./handlers/errorHandlers');
 const routes = require('./routes');
@@ -18,4 +19,6 @@ app.use(errorHandlers.notFound);
 app.use(errorHandlers.validationErrors);
 app.use(errorHandlers.developmentErrors);
 
-module.exports = app;
+module.exports.hanlder = serverless(app);
+
+// module.exports = app;

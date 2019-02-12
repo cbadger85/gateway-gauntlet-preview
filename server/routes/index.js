@@ -6,4 +6,10 @@ const router = express.Router();
 
 router.post('/attendees/register', asyncErrors(attendeeController.register));
 
+router.get('/test', (req, res) => {
+  res.json({
+    test: 'test',
+  });
+});
+
 module.exports = router;
