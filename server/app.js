@@ -12,7 +12,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use('/', routes);
+app.use('/api', routes);
 
 app.use(errorHandlers.notFound);
 app.use(errorHandlers.validationErrors);

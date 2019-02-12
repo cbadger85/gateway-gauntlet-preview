@@ -4,6 +4,6 @@ const attendeeController = require('../controllers/attendeeController');
 
 const router = express.Router();
 
-router.post('/register', attendeeController.register);
+router.post('/attendees/register', asyncErrors(attendeeController.register));
 
 module.exports = router;
