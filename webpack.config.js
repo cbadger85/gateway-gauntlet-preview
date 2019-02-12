@@ -11,6 +11,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack');
 const ImageminJpegtran = require('imagemin-jpegtran');
 const HtmlWebPackInlineSVGPlugin = require('html-webpack-inline-svg-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: { main: './src/js/index.js' },
@@ -71,6 +72,15 @@ module.exports = {
       hash: true,
       template: './src/index.html',
       filename: 'index.html',
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      hash: true,
+      template: './src/register.html',
+      filename: 'register.html',
+    }),
+    new Dotenv({
+      path: './.env.local',
     }),
     new CopyWebpackPlugin([
       { from: 'src/images', to: 'images' },

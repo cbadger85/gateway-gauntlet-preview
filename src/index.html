@@ -26,9 +26,9 @@
       <li class="nav__list-item"><a href="#about" data-smooth-scroll-target="about" class="nav__nav-item smooth-scroll">About</a></li>
       <li class="nav__list-item"><a href="#missions" data-smooth-scroll-target="missions" class="nav__nav-item smooth-scroll">Missions</a></li>
       <li class="nav__list-item"><a href="#location"  data-smooth-scroll-target="location"class="nav__nav-item smooth-scroll">Location</a></li>
-      <li class="nav__list-item"><a href="#" data-smooth-scroll-target="gauntlet-challenge" class="nav__nav-item smooth-scroll">Gauntlet Challenge</a></li>
-      <li class="nav__list-item"><a href="#" data-smooth-scroll-target="who" class="nav__nav-item smooth-scroll">Who</a></li>
-      <li class="nav__list-item" id="last-item"><a href="#" class="nav__button--call-to-action">Sign Up</a></li>
+      <li class="nav__list-item"><a href="#gauntlet-challenge" data-smooth-scroll-target="gauntlet-challenge" class="nav__nav-item smooth-scroll">Gauntlet Challenge</a></li>
+      <li class="nav__list-item"><a href="#who" data-smooth-scroll-target="who" class="nav__nav-item smooth-scroll">Who</a></li>
+      <li class="nav__list-item"><a href="/register.html" class="nav__button--call-to-action">Sign Up</a></li>
     </ul>
   </nav>
   <header class="header" id="top">
@@ -38,10 +38,10 @@
         <h1 class="header__heading">Gateway Gauntlet</h1>
         <p>An Infinity Dire States event held in Saint Louis</p>
       </div>
-      <img class="header__logo" inline src="images/grayscale-gauntlet.svg">
-      <a href="#" class="header__button--call-to-action">Sign Up</a>
+      <img class="header__logo" inline src="images/grayscale-gauntlet.svg" alt="Gateway Gauntlet Logo">
+      <a href="/register.html" class="header__button--call-to-action">Sign Up</a>
     </div>
-    </header>
+  </header>
   <div class="container">
     <div class="white-content__container" id="about">
       <main class="main-content__container">
@@ -61,7 +61,7 @@
             <li>Swag Bag</li>
             <li>Lunch on the first day</li>
           </ul>
-          <a href="#" class="card__button--call-to-action">Buy Now</a>
+          <a href="/register.html" class="card__button--call-to-action">Buy Now</a>
         </div>
       </main>
     </div>
@@ -103,7 +103,7 @@
           <div class="content__container-text--where">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio itaque natus sunt quibusdam facere ut sit repellendus aliquam quos ipsum laboriosam quam a rem aperiam, sed officia quod laborum animi?</p>
             <div class="card--map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12478.543779662028!2d-90.3518159!3d38.5652008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5688a3c33443cada!2sGame+Nite!5e0!3m2!1sen!2sus!4v1549166523239" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12478.543779662028!2d-90.3518159!3d38.5652008!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5688a3c33443cada!2sGame+Nite!5e0!3m2!1sen!2sus!4v1549166523239" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen title="Game Night Location"></iframe>
             </div>
           </div>
         </section>
@@ -122,12 +122,44 @@
       <section class="content__container--who">
         <h2 class="content__heading">Who Are We</h2>
         <hr class="content__hr--orange">
-
+        <div class="organizer-container">
+          <div class="organizer">
+            <div class="head-shot"></div>
+            <div class="organizer-text">
+              <h3>Greg Patterson</h3>
+              <p>Tornament Organizer/Warcor</p>
+            </div>
+          </div>
+          <div class="organizer">
+            <div class="head-shot"></div>
+            <div class="organizer-text">
+              <h3>Jimmy Hanabass</h3>
+              <p>Tornament Organizer</p>
+            </div>
+          </div>
+          <div class="organizer">
+            <div class="head-shot"></div>
+            <div class="organizer-text">
+              <h3>Charles Badger</h3>
+              <p>Tornament Organizer</p>
+            </div>
+          </div>
+          <div class="organizer">
+            <div class="head-shot"></div>
+            <div class="organizer-text">
+              <h3>Bruno de Kort</h3>
+              <p>Social Coordinator</p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   </div>
+  <footer class="footer">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem temporibus ad accusamus quas perspiciatis dolores ipsum commodi. Fugiat asperiores tempore itaque quos neque, hic, deleniti, ducimus velit similique placeat ex.
+  </footer>
 
-
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
 </body>
 </html>
