@@ -79,9 +79,7 @@ module.exports = {
       template: './src/register.html',
       filename: 'register.html',
     }),
-    new Dotenv({
-      path: './.env.local' || './.env',
-    }),
+    new Dotenv(),
     new CopyWebpackPlugin([
       { from: 'src/images', to: 'images' },
     ]),
