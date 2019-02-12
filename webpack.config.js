@@ -80,7 +80,7 @@ module.exports = {
       filename: 'register.html',
     }),
     new Dotenv({
-      path: './.env.local',
+      path: './.env.local' || './.env',
     }),
     new CopyWebpackPlugin([
       { from: 'src/images', to: 'images' },
