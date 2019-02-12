@@ -19,6 +19,6 @@ app.use(errorHandlers.notFound);
 app.use(errorHandlers.validationErrors);
 app.use(errorHandlers.developmentErrors);
 
-module.exports.hanlder = serverless(app);
+module.exports.handler = serverless(app);
 
 // module.exports = app;
