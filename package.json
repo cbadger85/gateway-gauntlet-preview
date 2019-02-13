@@ -6,10 +6,12 @@
   "scripts": {
     "start": "npm run build && node ./server",
     "dev": "concurrently \"npm:watch\" \"npm:webpack-dev\" --kill-others --names \"EXPRESS,WEBPACK\" -c \"bgBlue.bold,bgGreen.red.italic\"",
-    "build": "webpack --mode production",
     "watch": "nodemon ./server --ignore public/",
     "webpack-dev": "webpack-dev-server --mode development --open --disable-host-check",
-    "serve": "netlify-lambda serve ./lambda -t 100"
+    "serve": "netlify-lambda serve ./lambda -t 100",
+    "build:functions": "netlify-lambda build ./lambda",
+    "build:prod": "webpack --mode production",
+    "build": "npm run build:prod && npm run build:functions"
   },
   "repository": {
     "type": "git",
