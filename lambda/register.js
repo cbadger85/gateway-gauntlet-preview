@@ -1,41 +1,32 @@
-// const express = require('express');
-// const serverless = require('serverless-http');
-// const bodyParser = require('body-parser');
+const dotenv = require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
-// const app = express();
+exports.handler = async (event, context) => {
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: 'Method not allowed',
+    };
+  }
 
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
+  const params = JSON.parse(event.body);
 
-// const router = express.Router();
 
-// app.use((req, res, next) => {
-//   res.append('Access-Control-Allow-Origin', ['*']);
-//   res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//   res.append('Access-Control-Allow-Headers', 'Content-Type');
-//   res.append('Access-Control-Max-Age', '2592000');
-//   res.append('Access-Control-Allow-Credentials', 'true');
-//   next();
-// });
+  const createCharge = {
+    amount: 3500,
+    currency: 'usd',
+    description: 'Gateway Gauntlet',
+    source: params.stripeToken,
+    receipt_email: params.email,
+  };
 
-// app.get('/register', (req, res) => {
-//   res.json({
-//     test: 'message',
-//   });
-// });
+  console.log(createCharge);
 
-// app.post('/register', (req, res) => {
-//   console.log(req.body);
+  const charge = await stripe.charges.create(createCharge);
+  console.log(charge);
 
-//   res.json({
-//     message: req.body.message,
-//   });
-// });
-
-// module.exports = router;
-// module.exports.handler = serverless(app);
-
-exports.handler = async (event, context) => ({
-  statusCode: 200,
-  body: 'Hello World',
-});
+  return {
+    statusCode: 200,
+    body: 'Success!',
+  };
+};

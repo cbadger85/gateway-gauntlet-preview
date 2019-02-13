@@ -105,7 +105,9 @@ module.exports = {
   ],
   devServer: {
     proxy: {
-      '/': 'http://localhost:8000',
+      '/.netlify': 'http://localhost:9000',
+      pathRewrite: { '^/.netlify/functions': '' },
+      changeOrigin: true,
     },
   },
 };
