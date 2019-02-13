@@ -26,7 +26,7 @@ const payment = (element, form) => {
 
     console.log(registrationData);
 
-    const res = await axios.post('/api/attendees/register', registrationData);
+    const res = await axios.post('/.netlify/functions/register', registrationData);
 
     console.log(res.data);
     // form.submit();

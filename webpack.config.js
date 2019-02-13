@@ -104,10 +104,9 @@ module.exports = {
     new WebpackMd5Hash(),
   ],
   devServer: {
-    proxy: [{
-      context: ['/api'],
-      target: 'http://localhost:8080',
-    }],
+    proxy: {
+      '/': 'http://localhost:8000',
+    },
   },
 };
 

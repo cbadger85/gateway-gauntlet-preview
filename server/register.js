@@ -16,7 +16,7 @@ const router = express.Router();
 
 // app.use('/.netlify/functions/register', router);
 
-app.get('/', (req, res) => {
+app.get('/register', (req, res) => {
   res.send('Hello World!');
 });
 

@@ -15,9 +15,6 @@ app.use(bodyParser.json());
 
 app.use('/api', routes);
 
-const router = express.Router();
-app.use('/.netlify/functions/app', router);
-
 app.use(errorHandlers.notFound);
 app.use(errorHandlers.validationErrors);
 app.use(errorHandlers.developmentErrors);
