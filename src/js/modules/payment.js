@@ -5,6 +5,7 @@ const payment = (element, form) => {
   const elements = stripe.elements();
   const registerButton = document.getElementById('register-button');
   const errorElement = document.getElementById('error');
+  const top = document.getElementById('top');
 
   const submittingPayment = (bool) => {
     const buttonHeight = registerButton.offsetHeight;
@@ -37,6 +38,7 @@ const payment = (element, form) => {
 
       document.querySelector('form').style.display = 'none';
       document.getElementById('success').style.display = 'block';
+      top.scrollIntoView();
     } catch (err) {
       submittingPayment(false);
 
