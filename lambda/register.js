@@ -1,6 +1,9 @@
-const querystring = require('querystring');
 const dotenv = require('dotenv').config();
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const faunadb = require('faunadb');
+
+const client = new faunadb.Client({ secret: process.env.FAUNADB_KEY });
+const q = faunadb.query;
 
 exports.handler = async (event, context) => {
   if (event.httpMethod !== 'POST') {
@@ -10,28 +13,52 @@ exports.handler = async (event, context) => {
     };
   }
 
-  // const params = querystring.parse(event.body);
+  const data = JSON.parse(event.body);
 
-  // console.log(`Hello, ${params.name}`);
-
-  const params = JSON.parse(event.body);
-
-
-  const createCharge = {
+  const charge = {
     amount: 3500,
     currency: 'usd',
     description: 'Gateway Gauntlet',
-    source: params.stripeToken,
-    receipt_email: params.email,
+    source: data.stripeToken,
+    receipt_email: data.email,
   };
 
-  console.log(createCharge);
-
-  const charge = await stripe.charges.create(createCharge);
-  console.log(charge);
-
-  return {
-    statusCode: 200,
-    body: 'Success!',
+  const schema = {
+    name: data.name,
+    itsName: data.itsName,
+    itsPin: data.itsPin,
+    email: data.email,
+    city: data.city,
+    state: data.state,
+    paid: true,
+    attending: true,
   };
+
+  try {
+    await stripe.charges.create(charge);
+
+    await client.query(
+      q.Create(q.Class('attendees'), {
+        data: schema,
+      }),
+    );
+
+    return {
+      statusCode: 200,
+      body: JSON.stringify({
+        message: 'Success!',
+      }),
+    };
+  } catch (err) {
+    if (err.type === 'StripeCardError') {
+      return {
+        statusCode: 402,
+        body: JSON.stringify('Your card was declined'),
+      };
+    }
+    return {
+      statusCode: 402,
+      body: JSON.stringify('Something went wrong, please try again later'),
+    };
+  }
 };

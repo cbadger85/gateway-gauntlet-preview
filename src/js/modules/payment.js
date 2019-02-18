@@ -3,35 +3,51 @@ import axios from 'axios';
 const payment = (element, form) => {
   const stripe = Stripe(process.env.STRIPE_PUB_KEY);
   const elements = stripe.elements();
+  const registerButton = document.getElementById('register-button');
+  const errorElement = document.getElementById('error');
+
+  const submittingPayment = (bool) => {
+    const buttonHeight = registerButton.offsetHeight;
+    const buttonWidth = registerButton.offsetWidth;
+    registerButton.disabled = bool;
+    registerButton.style.height = `${buttonHeight.toString()}px`;
+    registerButton.style.width = `${buttonWidth.toString()}px`;
+
+    if (bool) {
+      registerButton.innerText = '';
+    } else {
+      registerButton.innerText = 'Register';
+    }
+  };
 
   const submitToken = async (token, formData) => {
-    // const hiddenInput = document.createElement('input');
-    // hiddenInput.setAttribute('type', 'hidden');
-    // hiddenInput.setAttribute('name', 'stripeToken');
-    // hiddenInput.setAttribute('value', token.id);
-    // form.appendChild(hiddenInput);
+    try {
+      const registrationData = {
+        name: formData.name.value,
+        itsName: formData.itsName.value,
+        itsPin: formData.itsPin.value,
+        email: formData.email.value,
+        city: formData.city.value,
+        state: formData.state.value,
+        zip: formData.zip.value,
+        stripeToken: token.id,
+      };
 
-    // TODO: submit form to serverless function
+      await axios.post('/.netlify/functions/register', registrationData);
 
-    const registrationData = {
-      name: formData.name.value,
-      itsName: formData.itsName.value,
-      itsPin: formData.itsPin.value,
-      email: formData.email.value,
-      city: formData.city.value,
-      state: formData.state.value,
-      zip: formData.zip.value,
-      stripeToken: token.id,
-    };
+      document.querySelector('form').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
 
-    console.log(registrationData);
+      // TODO: toggle modal with either success and redirect or error message.
+    } catch (err) {
+      submittingPayment(false);
 
-    const res = await axios.post('/.netlify/functions/register', registrationData);
-
-    console.log(res.data);
-    // form.submit();
-
-    // TODO: toggle modal with either success and redirect or error message.
+      if (err.response.status === 402) {
+        errorElement.innerText = err.response.data;
+      } else {
+        errorElement.innerText = 'Something went wrong, please try again later';
+      }
+    }
   };
 
   const stripeOptions = {
@@ -53,6 +69,8 @@ const payment = (element, form) => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    submittingPayment(true);
 
     const { name, state, zip } = e.target.elements;
 

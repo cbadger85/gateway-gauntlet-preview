@@ -8,8 +8,8 @@
     "dev": "concurrently \"npm:serve\" \"npm:webpack-dev\" --kill-others --names \"SERVER,WEBPACK\" -c \"bgBlue.bold,bgGreen.red.italic\"",
     "watch": "nodemon ./server --ignore public/",
     "webpack-dev": "webpack-dev-server --mode development --open --disable-host-check",
-    "serve": "netlify-lambda serve ./lambda -t 100",
-    "build:functions": "netlify-lambda build ./lambda",
+    "serve": "netlify-lambda serve ./lambda -t 100 -c ./lambda.config.js",
+    "build:functions": "netlify-lambda build ./lambda -c ./lambda.config.js",
     "build:prod": "webpack --mode production",
     "build": "npm run build:prod && npm run build:functions"
   },
@@ -29,6 +29,7 @@
     "body-parser": "^1.18.3",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "faunadb": "^2.6.0",
     "querystring": "^0.2.0",
     "serverless-http": "^1.9.0",
     "stripe": "^6.23.1"
