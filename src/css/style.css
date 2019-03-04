@@ -258,9 +258,33 @@ body {
   color: #222;
 }
 
+.white-content__container a,
+.black-content__container a,
+.gray-content__container a {
+  text-decoration: none;
+}
+
+.white-content__container a {
+  color: #555;
+}
+
+.white-content__container a:hover {
+  color: black;
+}
+
 .black-content__container {
   background: #222;
   color: #eee;
+}
+
+.black-content__container a,
+.gray-content__container a {
+  color: #ccc;
+}
+
+.black-content__container a:hover,
+.gray-content__container a:hover {
+  color: white;
 }
 
 .gray-content__container {
@@ -410,15 +434,68 @@ box-shadow: 2px 10px 30px #111;
   margin: 10px auto;
 }
 
+.head-shot img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  border: 1px solid orange;
+}
+
 .organizer-text {
   margin: 10px auto;
   text-align: center;
 }
 
 .footer {
-  height: 400px;
   background: #111;
+  padding: 30px;
   color: #d3d3d3;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer__links-container {
+  text-align: center;
+}
+
+/* .footer__links-container,
+.footer__bibliography-container {
+  width: 300px;
+} */
+
+.footer__links-container ul {
+  list-style: none;
+  font-size: 18px;
+  display: block;
+  margin: auto;
+}
+
+.footer__links-container a {
+  text-decoration: none;
+  color: #ddd;
+}
+
+.footer__links-container a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.footer__image-container {
+  width: 300px;
+}
+
+.footer__bibliography-container {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.footer__bibliography-container ul {
+  list-style: none;
+  text-align: center;
+  display: block;
 }
 
 .register-container {
@@ -557,7 +634,8 @@ box-shadow: 2px 10px 30px #111;
   background: linear-gradient(90deg, #fffa00 0%, #fc8e11 50%, #fffa00 100%);
   background-size: 200% 1px;
   background-position: 0%;
-  animation: slide 1s infinite;
+  border: 1px solid #af3100;
+  animation: slide 1s linear 500ms infinite running;
 }
 
 @keyframes slide {
@@ -565,12 +643,8 @@ box-shadow: 2px 10px 30px #111;
     background-position: 0%;
   }
   
-  50% {
-    background-position: 100%;
-  }
-  
   100% {
-    background-position: 0%;
+    background-position: 200%;
   }
 }
 
@@ -594,7 +668,7 @@ box-shadow: 2px 10px 30px #111;
 .success {
   margin: 50px auto;
   font-size: 28px;
-  color: green;
+  color: #15381c;
   display: none;
   text-align: center;
 }
@@ -692,6 +766,32 @@ box-shadow: 2px 10px 30px #111;
   .register-header {
     padding-top: 70px;
   }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer__links-container,
+  .footer__bibliography-container {
+    flex-basis: 400px;
+  }
+
+  .footer__links-container {
+    text-align: left;
+    padding-left: 8%;
+  }
+
+  .footer__image-container {
+    flex-basis: 300px;
+    margin: 20px;
+  }
+
+  .footer__bibliography-container ul {
+    list-style: disc;
+    text-align: left;
+    display: block;
+  }
 }
 
 @media screen and (min-width: 991px) {
@@ -749,9 +849,9 @@ box-shadow: 2px 10px 30px #111;
     padding-right: 45px;
   }
 
-  /* .content__container-text--where {
-    padding-left: 30px;
-  } */
+  .content__container-text--where address {
+    text-align: center;
+  }
 
   /* .nav__nav-item {
     margin-left: 50px;

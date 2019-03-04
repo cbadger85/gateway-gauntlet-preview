@@ -81,6 +81,7 @@ const payment = (element, form) => {
     });
 
     if (!error) {
+      // window.setTimeout(() => submittingPayment(false), 3000);
       submitToken(token, e.target.elements);
     }
   });

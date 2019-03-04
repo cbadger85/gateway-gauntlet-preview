@@ -4,13 +4,14 @@ A preview of the Gateway Gauntlet website
 [Live Demo](https://gateway-gauntlet-preview.netlify.com/)
 
 ## TODO:
+* Replace Lorem Ipsum with content
 * Add footer to website
 * Add bibliography to footer
-* Create registration form
-* Add server-side API for accepting payment and adding registrants to the database
-* Add "Success" modal to front page after registration successfully completes
-* Add days and spots remaining to front page
 * SEO
+* Add favicon
+* Move site to gatewaygauntlet.com
+* Add live keys for Stripe
+* Add keys for db
 
 ### Biblography
 
