@@ -401,15 +401,15 @@ box-shadow: 2px 10px 30px #111;
 
 .challenge-image-container {
   margin: auto;
-}
-
-.challenge-patch {
   width: 200px;
-  /* flex-basis: 800px; */
-  /* flex-shrink: 0; */
+  flex-shrink: 0;
   margin: auto;
   margin-bottom: 30px;
 }
+
+/* .challenge-patch {
+
+} */
 
 .content__container-text--challenge {
   display: flex;
